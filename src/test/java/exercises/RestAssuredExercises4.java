@@ -26,6 +26,8 @@ public class RestAssuredExercises4 {
 	 * Use /v1/oauth2/token
 	 ******************************************************/
 	
+	String oauthToken;
+	
 	@BeforeClass
 	public void retrieveOAuthToken() {
 		
