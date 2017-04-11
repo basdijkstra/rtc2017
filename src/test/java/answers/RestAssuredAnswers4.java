@@ -26,8 +26,12 @@ public class RestAssuredAnswers4 {
 	 * Use /v1/oauth2/token
 	 ******************************************************/
 	
+	String oauthToken;
+	
 	@BeforeClass
 	public void retrieveOAuthToken() {
+		
+		oauthToken =
 		
 		given().
 			auth().
@@ -36,8 +40,8 @@ public class RestAssuredAnswers4 {
 		when().
 			get("/v1/oauth2/token").
 		then().
-			log().
-			body();
+			extract().
+			path("access_token");
 	}
 	
 	/*******************************************************
@@ -54,7 +58,7 @@ public class RestAssuredAnswers4 {
 		
 		given().
 			auth().
-			oauth2("A101.Z9Ld87BSuMFSxUxGiUL3FCabpcnr-yURg2S7HYngOc6104_4c0-RIC3CAqyrCjAD.ndfJOqSUk6dDNbGirW7EHU0mtZy").
+			oauth2(oauthToken).
 		when().
 			get("/v1/payments/payment/").
 		then().
