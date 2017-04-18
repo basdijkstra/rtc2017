@@ -1,0 +1,11 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/v1/payments/payment/"
+    },
+    "response": {
+        "status": 200,
+		"headers": { "Content-Type": "application/json" },
+        "jsonBody": { "paymentsCount" : 4 }
+    }
+}

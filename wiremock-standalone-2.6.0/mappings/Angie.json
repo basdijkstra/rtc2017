@@ -1,0 +1,11 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/get/angie"
+    },
+    "response": {
+        "status": 200,
+		"headers": { "Content-Type": "application/xml" },
+        "bodyFileName": "angie.xml"
+    }
+}
