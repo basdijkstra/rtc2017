@@ -1,0 +1,11 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/hello"
+    },
+    "response": {
+        "status": 200,
+		"headers": { "Content-Type": "application/json" },
+        "jsonBody": {"Hello":{"Is it me you're looking for?":""}}
+    }
+}

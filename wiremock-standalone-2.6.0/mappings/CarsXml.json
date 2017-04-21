@@ -1,11 +1,11 @@
 {
     "request": {
         "method": "GET",
-        "url": "/get/angie"
+        "url": "/xml/cars"
     },
     "response": {
         "status": 200,
 		"headers": { "Content-Type": "application/xml" },
-        "bodyFileName": "angie.xml"
+        "bodyFileName": "cars.xml"
     }
 }
