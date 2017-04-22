@@ -18,5 +18,11 @@
 			<version>6.11</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.github.tomakehurst</groupId>
+			<artifactId>wiremock</artifactId>
+			<version>2.6.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 </project>
