@@ -2,7 +2,6 @@ package answers;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
@@ -67,7 +66,7 @@ public class WireMockAnswers2 {
 		 ************************************************/
 		
 		stubFor(get(urlEqualTo("/exercise203"))
-				.withHeader("MyHeader",matching("MyHeaderValue"))
+				.withHeader("MyHeader",equalTo("MyHeaderValue"))
 				.withHeader("NoSuchElement", absent())
 				.willReturn(aResponse()
 						.withBody("Exercise 203 passed")
@@ -104,7 +103,7 @@ public class WireMockAnswers2 {
 		 ************************************************/
 		
 		stubFor(get(urlEqualTo("/exercise205"))
-				.withCookie("MyCookie",matching("ChocolateChip"))
+				.withCookie("MyCookie",equalTo("ChocolateChip"))
 				.willReturn(aResponse()
 						.withBody("Exercise 205 passed")
 				));
@@ -120,7 +119,7 @@ public class WireMockAnswers2 {
 	        get("http://localhost:9876/exercise201").
 	    then().
 	    	assertThat().
-	    	body(equalTo("Exercise 201 passed"));
+	    	body(org.hamcrest.Matchers.equalTo("Exercise 201 passed"));
 	}
 	
 	@Test
@@ -134,7 +133,7 @@ public class WireMockAnswers2 {
 	        get("http://localhost:9876/exercise202").
 	    then().
 	        assertThat().
-	        body(equalTo("Exercise 202 passed"));
+	        body(org.hamcrest.Matchers.equalTo("Exercise 202 passed"));
 	}
 	
 	@Test
@@ -148,7 +147,7 @@ public class WireMockAnswers2 {
 	        get("http://localhost:9876/exercise203").
 	    then().
 	        assertThat().
-	        body(equalTo("Exercise 203 passed"));
+	        body(org.hamcrest.Matchers.equalTo("Exercise 203 passed"));
 	}
 	
 	@Test
@@ -164,7 +163,7 @@ public class WireMockAnswers2 {
 	        get("http://localhost:9876/exercise204").
 	    then().
 	        assertThat().
-	        body(equalTo("Exercise 204 passed"));
+	        body(org.hamcrest.Matchers.equalTo("Exercise 204 passed"));
 	}
 	
 	@Test
@@ -178,6 +177,6 @@ public class WireMockAnswers2 {
 	        get("http://localhost:9876/exercise205").
 	    then().
 	        assertThat().
-	        body(equalTo("Exercise 205 passed"));
+	        body(org.hamcrest.Matchers.equalTo("Exercise 205 passed"));
 	}
 }

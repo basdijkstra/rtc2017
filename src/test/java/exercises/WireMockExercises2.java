@@ -2,7 +2,6 @@ package exercises;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
@@ -95,7 +94,7 @@ public class WireMockExercises2 {
 	        get("http://localhost:9876/exercise201").
 	    then().
 	    	assertThat().
-	    	body(equalTo("Exercise 201 passed"));
+	    	body(org.hamcrest.Matchers.equalTo("Exercise 201 passed"));
 	}
 	
 	@Test
@@ -109,7 +108,7 @@ public class WireMockExercises2 {
 	        get("http://localhost:9876/exercise202").
 	    then().
 	        assertThat().
-	        body(equalTo("Exercise 202 passed"));
+	        body(org.hamcrest.Matchers.equalTo("Exercise 202 passed"));
 	}
 	
 	@Test
@@ -123,7 +122,7 @@ public class WireMockExercises2 {
 	        get("http://localhost:9876/exercise203").
 	    then().
 	        assertThat().
-	        body(equalTo("Exercise 203 passed"));
+	        body(org.hamcrest.Matchers.equalTo("Exercise 203 passed"));
 	}
 	
 	@Test
@@ -139,7 +138,7 @@ public class WireMockExercises2 {
 	        get("http://localhost:9876/exercise204").
 	    then().
 	        assertThat().
-	        body(equalTo("Exercise 204 passed"));
+	        body(org.hamcrest.Matchers.equalTo("Exercise 204 passed"));
 	}
 	
 	@Test
@@ -153,6 +152,6 @@ public class WireMockExercises2 {
 	        get("http://localhost:9876/exercise205").
 	    then().
 	        assertThat().
-	        body(equalTo("Exercise 205 passed"));
+	        body(org.hamcrest.Matchers.equalTo("Exercise 205 passed"));
 	}
 }

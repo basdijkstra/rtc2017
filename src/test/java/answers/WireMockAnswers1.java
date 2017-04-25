@@ -2,10 +2,7 @@ package answers;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.*;
 import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
-import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
-import io.restassured.parsing.Parser;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
