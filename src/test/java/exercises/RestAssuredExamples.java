@@ -7,9 +7,18 @@ import io.restassured.http.ContentType;
 import io.restassured.specification.ResponseSpecification;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class RestAssuredExamples {
+	
+	@DataProvider(name = "drivers")
+	public Object[][] createDriverData() {
+		return new Object[][] {
+				{"hamilton","44"},
+				{"max_verstappen","33"}
+		};
+	}
 	
 	@Test
 	public void validateCountryForZipCode() {
@@ -53,6 +62,18 @@ public class RestAssuredExamples {
 			get("http://ergast.com/api/f1/drivers/{driverName}.json").
 		then()
 			.body("MRData.DriverTable.Drivers.permanentNumber[0]",equalTo("33"));			
+	}
+	
+	@Test(dataProvider = "drivers")
+	public void useSinglePathParameterWithDataProvider(String driverName, String permanentNumber) {
+		
+		given().
+			pathParam("driverName",driverName).
+		when().
+			get("http://ergast.com/api/f1/drivers/{driverName}.json").
+		then().
+			assertThat().
+			body("MRData.DriverTable.Drivers.permanentNumber[0]", equalTo(permanentNumber));
 	}
 	
 	private String accessToken;
